@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy 20th Birthday!</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ff7eb3, #65d8ff);
+        overflow: hidden;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 40px 60px;
+        border-radius: 25px;
+        text-align: center;
+        color: white;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+        position: relative;
+        z-index: 10;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin: 0 0 12px;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 10px white; }
+        to   { text-shadow: 0 0 25px #fff, 0 0 40px #ff80df; }
+    }
+
+    p {
+        font-size: 1.3rem;
+        margin: 8px 0 28px;
+    }
+
+    /* 🎈 Balloons */
+    .balloon {
+        position: absolute;
+        width: 60px;
+        height: 80px;
+        border-radius: 50%;
+        animation: floatUp 6s infinite ease-in-out;
+        opacity: 0.85;
+        z-index: 1;
+    }
+
+    .balloon::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 40px;
+        background: white;
+        left: 50%;
+        top: 80px;
+        transform: translateX(-50%);
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(100vh); }
+        100% { transform: translateY(-120vh); }
+    }
+
+    .b1 { left: 10%; background: #ff9a9e; animation-duration: 8s; }
+    .b2 { left: 30%; background: #fad0c4; animation-duration: 7s; }
+    .b3 { left: 50%; background: #fbc2eb; animation-duration: 9s; }
+    .b4 { left: 70%; background: #a1c4fd; animation-duration: 6s; }
+    .b5 { left: 85%; background: #cfd9df; animation-duration: 10s; }
+
+    /* 🎂 Correct Layered Cake */
+    .cake {
+        width: 180px;
+        margin: 50px auto 0;
+        position: relative;
+    }
+
+    .candle {
+        width: 12px;
+        height: 45px;
+        background: #ffffff;
+        border-radius: 6px;
+        margin: 0 auto;
+        position: relative;
+        top: -20px;
+        box-shadow: 0 0 5px white;
+        z-index: 5;
+    }
+
+    .flame {
+        width: 18px;
+        height: 25px;
+        background: radial-gradient(circle, #ffec85 0%, #ff9900 70%);
+        border-radius: 50%;
+        position: absolute;
+        top: -28px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: flicker 0.25s infinite alternate;
+        box-shadow: 0 0 20px #ffd42a;
+    }
+
+    @keyframes flicker {
+        from { transform: translateX(-50%) scale(1); }
+        to   { transform: translateX(-50%) scale(1.12); }
+    }
+
+    .frost {
+        width: 100px;
+        height: 28px;
+        background: #ffe6f2;
+        border-radius: 15px;
+        margin: -15px auto -8px;
+        box-shadow: 0 5px 0 #e6a7c7;
+        z-index: 3;
+        position: relative;
+    }
+
+    .layer {
+        height: 45px;
+        border-radius: 10px;
+        margin: 0 auto 10px;
+        position: relative;
+    }
+
+    .layer:nth-child(3) {
+        width: 120px;
+        background: #ffccdd;
+        box-shadow: 0 5px 0 #e599a9;
+    }
+
+    .layer:nth-child(4) {
+        width: 150px;
+        background: #ffd9b3;
+        box-shadow: 0 5px 0 #e3a16b;
+    }
+
+    .layer:nth-child(5) {
+        width: 180px;
+        background: #ffccee;
+        box-shadow: 0 5px 0 #d18bbf;
+    }
+
+    /* 🌞 Footer */
+    .footer {
+        margin-top: 20px;
+        font-size: 1rem;
+        color: #fff;
+        opacity: 0.9;
+        text-align: center;
+        z-index: 50;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- 🎈 Balloons -->
+<div class="balloon b1"></div>
+<div class="balloon b2"></div>
+<div class="balloon b3"></div>
+<div class="balloon b4"></div>
+<div class="balloon b5"></div>
+
+<!-- Main Card -->
+<div class="card">
+    <h1>🎉 Happy 20th Birthday Nandini! 🎂</h1>
+
+    <p>
+      Parthy when??
+    </p>
+
+    <!-- 🎂 Cake -->
+    <div class="cake">
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+
+        <div class="frost"></div>
+
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+    </div>
+</div>
+
+<!-- 🌞 Footer -->
+<div class="footer">
+    Made in collaboration with a beloved Delta member ☀️
+</div>
+
+</body>
+</html>
